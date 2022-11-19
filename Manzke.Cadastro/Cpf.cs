@@ -1,6 +1,6 @@
 ﻿namespace Manzke.Cadastro
 {
-    public class Cpf
+    public static class Cpf
     {
         public static bool IsCPF(string cpf)
         {
@@ -67,6 +67,20 @@
             }
             else
                 return false;
+        }
+
+        public static string Format(string numero)
+        {
+            string result = numero;
+            if (result.Length == 11)
+            {
+                result = result.Substring(0, 3) + "." +
+                    result.Substring(3, 3) + "." +
+                    result.Substring(6, 3) + "-" +
+                    result.Substring(9, 2);
+            }
+
+            return result;
         }
     }
 }
