@@ -22,5 +22,13 @@ namespace Manzke.Cadastro
             return Cadastro.Telefone.Format(numero);
         }
 
+        public static string Capitalizar(string nome)
+        {
+            if (string.IsNullOrEmpty(nome))
+                return nome;
+            else
+                return System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(nome.Trim().ToLower());
+        }
+
     }
 }
