@@ -30,5 +30,17 @@ namespace Manzke.Cadastro
                 return System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(nome.Trim().ToLower());
         }
 
+        public static string Truncar(string texto, int maxChars)
+        {
+            if (texto.Length > maxChars)
+            {
+                return texto.Substring(0, maxChars);
+            }
+            else
+            {
+                return texto;
+            }
+        }
+
     }
 }
