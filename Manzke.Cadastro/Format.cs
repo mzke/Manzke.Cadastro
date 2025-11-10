@@ -58,8 +58,8 @@ namespace Manzke.Cadastro
                 }
 
                 // Regras de capitalização
-                bool deveCapitalizar = palavra.Length > 1 && (i == 0 || !preposicoes.Contains(palavra.ToLower()));
-
+                // bool deveCapitalizar = palavra.Length > 1 && (i == 0 || !preposicoes.Contains(palavra.ToLower()));
+                bool deveCapitalizar = i == 0 || (palavra.Length > 1 && !preposicoes.Contains(palavra.ToLower()));
                 if (deveCapitalizar)
                 {
                     palavra = char.ToUpper(palavra[0]) + palavra.Substring(1).ToLower();
